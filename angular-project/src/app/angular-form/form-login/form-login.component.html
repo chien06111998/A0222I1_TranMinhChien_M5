@@ -1,0 +1,26 @@
+<h1>Form Login.</h1>
+<form [formGroup]="formLogin" (ngSubmit)="login()">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+  </div>
+  <div>
+    <p style="color: red" *ngIf="formLogin.controls.email.hasError('require')">Email cannot be blank</p>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" formControlName="password" id="password">
+  </div>
+  <div>
+    <p style="color: red" *ngIf="formLogin.controls.password.hasError('require')">Password cannot be blank</p>
+  </div>
+  <div>
+    <p style="color: red" *ngIf="formLogin.controls.password.hasError('require')">Password must be more than 6 characters.
+    </p>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
