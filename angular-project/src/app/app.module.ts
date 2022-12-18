@@ -18,6 +18,13 @@ import { AngularFormComponent } from './angular-form/angular-form.component';
 import { TodoComponent } from './angular-form/todo/todo.component';
 import { FormCreateComponent } from './angular-form/form-create/form-create.component';
 import { FormLoginComponent } from './angular-form/form-login/form-login.component';
+import { ComponentComponent } from './component/component.component';
+import { CountdownComponent } from './component/countdown/countdown.component';
+import { ServiceRouterComponent } from './service-router/service-router.component';
+import { ProductManagementComponent } from './service-router/product-management/product-management.component';
+import {RouterModule} from '@angular/router';
+import { ProductCreateComponent } from './service-router/product-management/product/product-create/product-create.component';
+
 
 
 @NgModule({
@@ -38,12 +45,18 @@ import { FormLoginComponent } from './angular-form/form-login/form-login.compone
     TodoComponent,
     FormCreateComponent,
     FormLoginComponent,
+    ComponentComponent,
+    CountdownComponent,
+    ServiceRouterComponent,
+    ProductManagementComponent,
+    ProductCreateComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
