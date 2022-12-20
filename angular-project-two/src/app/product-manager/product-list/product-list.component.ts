@@ -40,4 +40,5 @@ export class ProductListComponent implements OnInit {
     this.config.currentPage = event;
   }
 
+
 }
