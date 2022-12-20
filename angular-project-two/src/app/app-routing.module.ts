@@ -9,6 +9,8 @@ import {CategoryListComponent} from './ss9-connect-backend/product-manager/categ
 import {CategoryCreateComponent} from './ss9-connect-backend/product-manager/category/category-create/category-create.component';
 import {CategoryEditComponent} from './ss9-connect-backend/product-manager/category/category-edit/category-edit.component';
 import {CategoryDeleteComponent} from './ss9-connect-backend/product-manager/category/category-delete/category-delete.component';
+import {NavbarComponent} from './case-study/navbar/navbar.component';
+import {FooterComponent} from './case-study/footer/footer.component';
 
 
 const routes: Routes = [
@@ -39,6 +41,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [
+    NavbarComponent,
+    FooterComponent
+  ],
+  exports: [RouterModule, NavbarComponent, FooterComponent]
 })
 export class AppRoutingModule { }
