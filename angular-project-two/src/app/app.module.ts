@@ -19,6 +19,15 @@ import { CategoryCreateComponent } from './ss9-connect-backend/product-manager/c
 import { CategoryEditComponent } from './ss9-connect-backend/product-manager/category/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './ss9-connect-backend/product-manager/category/category-delete/category-delete.component';
 import { CaseStudyComponent } from './case-study/case-study.component';
+import {ContractCreateComponent} from './case-study/contract/contract-create/contract-create.component';
+import {ContractListComponent} from './case-study/contract/contract-list/contract-list.component';
+import {CreateCustomerComponent} from './case-study/customer/create-customer/create-customer.component';
+import {CreateNewFacilityComponent} from './case-study/facility/create-new-facility/create-new-facility.component';
+import {CustomerListComponent} from './case-study/customer/customer-list/customer-list.component';
+import {CustomerUseFacilityComponent} from './case-study/customer/customer-use-facility/customer-use-facility.component';
+import {EditCustomerComponent} from './case-study/customer/edit-customer/edit-customer.component';
+import {EditFacilityComponent} from './case-study/facility/edit-facility/edit-facility.component';
+import {FacilityComponent} from './case-study/facility/facility-list/facility.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +44,16 @@ import { CaseStudyComponent } from './case-study/case-study.component';
     CategoryCreateComponent,
     CategoryEditComponent,
     CategoryDeleteComponent,
-    CaseStudyComponent
+    CaseStudyComponent,
+    ContractCreateComponent,
+    ContractListComponent,
+    CreateCustomerComponent,
+    CreateNewFacilityComponent,
+    CustomerListComponent,
+    CustomerUseFacilityComponent,
+    EditCustomerComponent,
+    EditFacilityComponent,
+    FacilityComponent
   ],
   imports: [
     BrowserModule,

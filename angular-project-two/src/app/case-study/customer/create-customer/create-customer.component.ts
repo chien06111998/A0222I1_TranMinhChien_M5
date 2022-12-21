@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-customer',
@@ -20,7 +20,7 @@ export class CreateCustomerComponent implements OnInit {
       phone: ['', [Validators.required, Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[0-9]{7}$')]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required]]
-    })
+    });
   }
 
   ngOnInit(): void {
