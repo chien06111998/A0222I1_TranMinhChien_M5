@@ -20,6 +20,8 @@ import { ContractListComponent } from './contract/contract-list/contract-list.co
 import { CotnractDetailComponent } from './contract/contract-detail/cotnract-detail.component';
 import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ContractEditComponent } from './contract/contract-edit/contract-edit.co
     ContractListComponent,
     CotnractDetailComponent,
     ContractCreateComponent,
-    ContractEditComponent
+    ContractEditComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
