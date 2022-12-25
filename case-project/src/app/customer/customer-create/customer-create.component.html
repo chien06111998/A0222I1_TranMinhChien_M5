@@ -1,0 +1,69 @@
+<div>
+  <h1>Thêm mới dịch vụ</h1>
+  <div>
+    <form [formGroup]="customerForm" (ngSubmit)="submit()">
+      <table>
+        <tr>
+          <td>Customer Name:</td>
+          <td><input type="text" class="form-control" formControlName="name"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.name.touched) && customerForm.controls.name.hasError('required') "> Name is not null </span>
+        </label>
+        <tr>
+          <td>Customer Type</td>
+          <td><input type="text" class="form-control"  formControlName="customerType"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.customerType.touched) && customerForm.controls.customerType.hasError('required') "> Area is not null </span>
+        </label>
+        <tr>
+          <td>Gender</td>
+          <td><input type="text" class="form-control" formControlName="gender" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.gender.touched) && customerForm.controls.gender.hasError('required') "> Cost is not null </span>
+        </label>
+        <tr>
+          <td>Birth Day</td>
+          <td><input type="date" class="form-control" formControlName="birthday" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.birthDay.touched) && customerForm.controls.birthDay.hasError('required') "> Max People is not null </span>
+        </label>
+        <tr>
+          <td>Id Card</td>
+          <td><input type="text" class="form-control" formControlName="idCard" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.idCard.touched) && customerForm.controls.idCard.hasError('required') "> Standard Room is not null </span>
+        </label>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" class="form-control" formControlName="email" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.email.touched) && customerForm.controls.email.hasError('required') "> Description is not null </span>
+        </label>
+        <tr>
+          <td>Phone</td>
+          <td><input type="text" class="form-control" formControlName="phone" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.phone.touched) && customerForm.controls.phone.hasError('required') "> Pool Area is not null </span>
+        </label>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" class="form-control" formControlName="address" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(customerForm.controls.address.touched) && customerForm.controls.address.hasError('required') "> Nmber Of Floors is not null </span>
+        </label>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

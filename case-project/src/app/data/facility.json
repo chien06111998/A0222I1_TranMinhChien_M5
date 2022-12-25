@@ -51,19 +51,6 @@
       "rentType": "6",
       "facilityType": "6",
       "id": 6
-    },
-    {
-      "facilityName": "name 1",
-      "area": "1",
-      "cost": "1",
-      "maxPeople": "1",
-      "standardRoom": "p01",
-      "description": "nha",
-      "poolArea": "1",
-      "numberOfFloors": "1",
-      "rentType": "1",
-      "facilityType": "1",
-      "id": 7
     }
   ]
 }

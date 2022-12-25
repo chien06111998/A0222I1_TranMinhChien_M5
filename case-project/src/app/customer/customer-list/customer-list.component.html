@@ -1,0 +1,62 @@
+<h1>Danh sách sản phẩm</h1>
+<a [routerLink]="['/customers/create']" class="btn btn-outline-dark">Add new facility</a>
+<div>
+  <table class="table table-striped">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Customer Type</td>
+      <td>Gender</td>
+      <td>Birthday</td>
+      <td>Id Card</td>
+      <td>phone</td>
+      <td>Email</td>
+      <td>address</td>
+      <td>Detail</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.customerType}}</td>
+      <td>{{customer.gender}}</td>
+      <td>{{customer.birthday}}</td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phone}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.address}}</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" [routerLink]="['/customers/detail', customer.id]">Detail</button></td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" [routerLink]="['/customers/edit', customer.id]">Edit</button></td>
+      <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delModal" (click)="delModal(customer)">Delete</button></td>
+    </tr>
+  </table>
+</div>
+
+<!--Modal delete-->
+<div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete facility:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Do you delete: </p>
+        <br>
+        <table class="table">
+          <tr>
+            <td>Facility name:</td>
+            <td>{{deleteCustomer.name}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-primary" (click)="delProduct(deleteCustomer.id)" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
