@@ -18,6 +18,7 @@ export class CategoryCreateComponent implements OnInit {
   }
 
   submit() {
+    console.log(6);
     const category = this.categoryForm.value;
     this.categoryService.saveCategory(category).subscribe(() => {
       this.categoryForm.reset();

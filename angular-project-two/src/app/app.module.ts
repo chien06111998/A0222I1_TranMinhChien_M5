@@ -28,6 +28,7 @@ import {CustomerUseFacilityComponent} from './case-study/customer/customer-use-f
 import {EditCustomerComponent} from './case-study/customer/edit-customer/edit-customer.component';
 import {EditFacilityComponent} from './case-study/facility/edit-facility/edit-facility.component';
 import {FacilityComponent} from './case-study/facility/facility-list/facility.component';
+import { CasestudyMd5Component } from './casestudy-md5/casestudy-md5.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {FacilityComponent} from './case-study/facility/facility-list/facility.co
     CustomerUseFacilityComponent,
     EditCustomerComponent,
     EditFacilityComponent,
-    FacilityComponent
+    FacilityComponent,
+    CasestudyMd5Component
   ],
   imports: [
     BrowserModule,

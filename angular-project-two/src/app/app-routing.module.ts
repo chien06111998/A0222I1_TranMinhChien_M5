@@ -11,16 +11,21 @@ import {CategoryEditComponent} from './ss9-connect-backend/product-manager/categ
 import {CategoryDeleteComponent} from './ss9-connect-backend/product-manager/category/category-delete/category-delete.component';
 import {NavbarComponent} from './case-study/navbar/navbar.component';
 import {FooterComponent} from './case-study/footer/footer.component';
+import {FacilityComponent} from './case-study/facility/facility-list/facility.component';
+import {EditFacilityComponent} from './case-study/facility/edit-facility/edit-facility.component';
+import {CreateNewFacilityComponent} from './case-study/facility/create-new-facility/create-new-facility.component';
 
 
 const routes: Routes = [
-  {path: '', component: ProductListComponent},
-  {path: 'product/list', component: ProductListComponent},
-  {path: 'product/create', component: ProductCreateComponent},
-  {path: 'product/edit/:id', component: ProductEditComponent},
+  // {path: '', component: ProductListComponent},
+  // {path: 'product/list', component: ProductListComponent},
+  // {path: 'product/create', component: ProductCreateComponent},
+  // {path: 'product/edit/:id', component: ProductEditComponent},
+
   // {path: '', component: DictionaryListComponent},
   // {path: 'list', component: DictionaryListComponent},
   // {path: 'detail/:word', component: DictionaryDetailComponent}
+
   {
     path: 'category/list',
     component: CategoryListComponent
@@ -37,6 +42,22 @@ const routes: Routes = [
     path: 'category/delete/:id',
     component: CategoryDeleteComponent
   },
+  // {
+  //   path: 'facility/list',
+  //   component: FacilityComponent
+  // },
+  // {
+  //   path: 'facility/create',
+  //   component: CreateNewFacilityComponent
+  // },
+  // {
+  //   path: 'facility/edit/:id',
+  //   component: EditFacilityComponent
+  // },
+  // {
+  //   path: 'facility/delete/:id',
+  //   component: CategoryDeleteComponent
+  // },
 ];
 
 @NgModule({

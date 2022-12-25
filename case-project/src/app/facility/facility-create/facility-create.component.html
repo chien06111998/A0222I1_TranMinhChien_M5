@@ -1,0 +1,84 @@
+<div>
+  <h1>Thêm mới dịch vụ</h1>
+  <div>
+    <form [formGroup]="facilityForm" (ngSubmit)="submit()">
+      <table>
+        <tr>
+          <td>Name facility:</td>
+          <td><input type="text" class="form-control" formControlName="facilityName" name="facilityName"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.facilityName.touched) && facilityForm.controls.facilityName.hasError('required') "> Name is not null </span>
+        </label>
+        <tr>
+          <td>Area:</td>
+          <td><input type="text" class="form-control"  formControlName="area"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.area.touched) && facilityForm.controls.area.hasError('required') "> Area is not null </span>
+        </label>
+        <tr>
+          <td>Cost</td>
+          <td><input type="text" class="form-control" formControlName="cost" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.cost.touched) && facilityForm.controls.cost.hasError('required') "> Cost is not null </span>
+        </label>
+        <tr>
+          <td>Max people</td>
+          <td><input type="text" class="form-control" formControlName="maxPeople" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.maxPeople.touched) && facilityForm.controls.maxPeople.hasError('required') "> Max People is not null </span>
+        </label>
+        <tr>
+          <td>Standard</td>
+          <td><input type="text" class="form-control" formControlName="standardRoom" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.standardRoom.touched) && facilityForm.controls.standardRoom.hasError('required') "> Standard Room is not null </span>
+        </label>
+        <tr>
+          <td>Description</td>
+          <td><input type="text" class="form-control" formControlName="description" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.description.touched) && facilityForm.controls.description.hasError('required') "> Description is not null </span>
+        </label>
+        <tr>
+          <td>Pool area</td>
+          <td><input type="text" class="form-control" formControlName="poolArea" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.poolArea.touched) && facilityForm.controls.poolArea.hasError('required') "> Pool Area is not null </span>
+        </label>
+        <tr>
+          <td>Floors</td>
+          <td><input type="text" class="form-control" formControlName="numberOfFloors" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.numberOfFloors.touched) && facilityForm.controls.numberOfFloors.hasError('required') "> Nmber Of Floors is not null </span>
+        </label>
+        <tr>
+          <td>Rent type</td>
+          <td><input type="text" class="form-control" formControlName="rentType" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.rentType.touched) && facilityForm.controls.rentType.hasError('required') "> Rent type is not null </span>
+        </label>
+        <tr>
+          <td>Facility type</td>
+          <td><input type="text" class="form-control" formControlName="facilityType" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(facilityForm.controls.facilityType.touched) && facilityForm.controls.facilityType.hasError('required') "> Facility type is not null </span>
+        </label>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary" [disabled]="facilityForm.invalid">Submit</button></td>
+        </tr>
+
+      </table>
+    </form>
+  </div>
+</div>

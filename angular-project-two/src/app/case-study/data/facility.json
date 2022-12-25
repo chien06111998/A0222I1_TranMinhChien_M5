@@ -1,0 +1,43 @@
+{
+  "facilities": [
+    {
+      "facilityId": 1,
+      "facilityName": "name 1",
+      "area": 1,
+      "cost": 1,
+      "maxPeople": 3,
+      "standardRoom": "P01",
+      "description": "Phong dep",
+      "poolArea": 2,
+      "numberOfFloors": 3,
+      "rentType": 2,
+      "facilityType": 1
+    },
+    {
+      "facilityId": 2,
+      "facilityName": "name 2",
+      "area": 2,
+      "cost": 2,
+      "maxPeople": 2,
+      "standardRoom": "P02",
+      "description": "Phong dep",
+      "poolArea": 2,
+      "numberOfFloors": 2,
+      "rentType": 2,
+      "facilityType": 2
+    },
+    {
+      "facilityId": 3,
+      "facilityName": "name 3",
+      "area": 3,
+      "cost": 3,
+      "maxPeople": 3,
+      "standardRoom": "P03",
+      "description": "Phong dep",
+      "poolArea": 3,
+      "numberOfFloors": 3,
+      "rentType": 3,
+      "facilityType": 3
+    }
+  ]
+}

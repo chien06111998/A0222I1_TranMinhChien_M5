@@ -1,0 +1,54 @@
+<div>
+  <h1>Thêm mới dịch vụ</h1>
+  <div>
+    <form [formGroup]="facilityForm" (ngSubmit)="updateForm()">
+      <table>
+        <tr>
+          <td>Name facility:</td>
+          <td><input type="text" class="form-control" formControlName="facilityName"></td>
+<!--          <td><input type="number" hidden id="form-control" formControlName="id"></td>-->
+        </tr>
+        <tr>
+          <td>Area:</td>
+          <td><input type="text" class="form-control"  formControlName="area"></td>
+        </tr>
+        <tr>
+          <td>Cost</td>
+          <td><input type="text" class="form-control" formControlName="cost" ></td>
+        </tr>
+        <tr>
+          <td>Max people</td>
+          <td><input type="text" class="form-control" formControlName="maxPeople" ></td>
+        </tr>
+        <tr>
+          <td>Standard</td>
+          <td><input type="text" class="form-control" formControlName="standardRoom" ></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td><input type="text" class="form-control" formControlName="description" ></td>
+        </tr>
+        <tr>
+          <td>Pool area</td>
+          <td><input type="text" class="form-control" formControlName="poolArea" ></td>
+        </tr>
+        <tr>
+          <td>Floors</td>
+          <td><input type="text" class="form-control" formControlName="numberOfFloors" ></td>
+        </tr>
+        <tr>
+          <td>Rent type</td>
+          <td><input type="text" class="form-control" formControlName="rentType" ></td>
+        </tr>
+        <tr>
+          <td>Facility type</td>
+          <td><input type="text" class="form-control" formControlName="facilityType" ></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

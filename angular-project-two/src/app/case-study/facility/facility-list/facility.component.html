@@ -1,69 +1,193 @@
-<div style="position: relative;text-align: center;color: white;">
-  <img style="width: 100%;height: 300px"
-       src="https://bietthubientrieudo.com/wp-content/uploads/2016/07/KCYw1466669026_Untitled-1.png">
-  <h1 style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);">LOẠI PHÒNG</h1>
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/product/create" class="btn btn-outline-dark">Thêm sản phẩm mới</a>
+<br><br>
+<div>
+  <table class="table table-striped">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Cost</td>
+      <td>Max people</td>
+      <td>Standar room</td>
+      <td>Description</td>
+      <td>Pool area</td>
+      <td>Number of floors</td>
+      <td>Rent type</td>
+      <td>Facility Type</td>
+      <td>Detail</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor="let facility of facilities | paginate: config">
+      <td>{{facility.facilityId}}</td>
+      <td>{{facility.facilityName}}</td>
+      <td>{{facility.cost}}</td>
+      <td>{{facility.maxPeople}}</td>
+      <td>{{facility.standardRoom}}</td>
+      <td>{{facility.description}}</td>
+      <td>{{facility.poolArea}}</td>
+      <td>{{facility.numberOfFloors}}</td>
+      <td>{{facility.rentType}}</td>
+      <td>{{facility.facilityType}}</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" (click)="delModal(facility)">Show</button></td>
+      <td><a class="btn btn-outline-dark" [routerLink]="['/facility/edit', facility.facilityId]">Edit</a></td>
+      <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delModal" (click)="delModal(facility)">Delete</button></td>
+    </tr>
+  </table>
 </div>
-<!-- Facility list -->
-<div class="container">
-  <div class="row m-3 mt-5 gx-2"> <!-- để set up gutters giữa các columns gx-* horizontal & g-* vertical-->
-    <div class="col-12 col-sm-6 col-md-4" *ngFor="let facility of facilities">
-      <div class="card card-hover">
-        <div class="card-img-top">
-          <div id="demo" class="carousel slide" data-ride="carousel">
 
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
+<pagination-controls (pageChange)="pageChanged($event)" previousLabel="Previous" nextLabel="Next"></pagination-controls>
 
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Los Angeles">
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Chicago">
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="New York">
-              </div>
-            </div>
+<!--Modal-->
+<!--<div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa sản phẩm</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <table class="table">-->
+<!--          <tr>-->
+<!--            <td>Mã sản phẩm:</td>-->
+<!--            <td>{{deleteProduct.id}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Tên:</td>-->
+<!--            <td>{{deleteProduct.name}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Giá:</td>-->
+<!--            <td>{{deleteProduct.price}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Mô tả:</td>-->
+<!--            <td>{{deleteProduct.description}}</td>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>-->
+<!--        <button type="button" class="btn btn-primary" (click)="delProduct()" data-dismiss="modal">Xóa</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div>
-            <p>Id: {{facility.facilityId}}</p>
-            <p>Name: {{facility.facilityName}}</p>
-            <p>Cost: {{facility.cost}}</p>
-            <p>Max people: {{facility.maxPeople}}</p>
-            <p>Standard room: {{facility.standardRoom}}</p>
-            <p>Description: {{facility.description}}</p>
-            <p>Pool Area: {{facility.poolArea}}</p>
-            <p>Number of Floors: {{facility.numberOfFloors}}</p>
-            <p>Rent type: {{facility.rentType}}</p>
-            <p>Facility type: {{facility.facilityType}}</p>
-          </div>
-          <button class="btn btn-outline-dark mx-3">Sửa</button>
-          <button class="btn btn-outline-dark">Xóa</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End facility-list list -->
+<!--&lt;!&ndash;Modal&ndash;&gt;-->
+<!--<div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel1">Sản phẩm</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <table class="table">-->
+<!--          <tr>-->
+<!--            <td>Mã sản phẩm:</td>-->
+<!--            <td>{{deleteProduct.id}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Tên:</td>-->
+<!--            <td>{{deleteProduct.name}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Giá:</td>-->
+<!--            <td>{{deleteProduct.price}}</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>Mô tả:</td>-->
+<!--            <td>{{deleteProduct.description}}</td>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+
+<!--<div style="position: relative;text-align: center;color: white;">-->
+<!--  <img style="width: 100%;height: 300px"-->
+<!--       src="https://bietthubientrieudo.com/wp-content/uploads/2016/07/KCYw1466669026_Untitled-1.png">-->
+<!--  <h1 style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);">LOẠI PHÒNG</h1>-->
+<!--</div>-->
+<!--&lt;!&ndash; Facility list &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <div class="row m-3 mt-5 gx-2"> &lt;!&ndash; để set up gutters giữa các columns gx-* horizontal & g-* vertical&ndash;&gt;-->
+<!--    <div class="col-12 col-sm-6 col-md-4" *ngFor="let facility of facilities | paginate: config">-->
+<!--      <div class="card card-hover">-->
+<!--        <div class="card-img-top">-->
+<!--          <div id="demo" class="carousel slide" data-ride="carousel">-->
+
+<!--            &lt;!&ndash; Indicators &ndash;&gt;-->
+<!--            <ul class="carousel-indicators">-->
+<!--              <li data-target="#demo" data-slide-to="0" class="active"></li>-->
+<!--              <li data-target="#demo" data-slide-to="1"></li>-->
+<!--              <li data-target="#demo" data-slide-to="2"></li>-->
+<!--            </ul>-->
+
+<!--            &lt;!&ndash; The slideshow &ndash;&gt;-->
+<!--            <div class="carousel-inner">-->
+<!--              <div class="carousel-item active">-->
+<!--                <img-->
+<!--                  src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"-->
+<!--                  alt="Los Angeles">-->
+<!--              </div>-->
+<!--              <div class="carousel-item">-->
+<!--                <img-->
+<!--                  src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600"-->
+<!--                  alt="Chicago">-->
+<!--              </div>-->
+<!--              <div class="carousel-item">-->
+<!--                <img-->
+<!--                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"-->
+<!--                  alt="New York">-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Left and right controls &ndash;&gt;-->
+<!--            <a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+<!--              <span class="carousel-control-prev-icon"></span>-->
+<!--            </a>-->
+<!--            <a class="carousel-control-next" href="#demo" data-slide="next">-->
+<!--              <span class="carousel-control-next-icon"></span>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <div>-->
+<!--            <p>Id: {{facility.facilityId}}</p>-->
+<!--            <p>Name: {{facility.facilityName}}</p>-->
+<!--            <p>Cost: {{facility.cost}}</p>-->
+<!--            <p>Max people: {{facility.maxPeople}}</p>-->
+<!--            <p>Standard room: {{facility.standardRoom}}</p>-->
+<!--            <p>Description: {{facility.description}}</p>-->
+<!--            <p>Pool Area: {{facility.poolArea}}</p>-->
+<!--            <p>Number of Floors: {{facility.numberOfFloors}}</p>-->
+<!--            <p>Rent type: {{facility.rentType}}</p>-->
+<!--            <p>Facility type: {{facility.facilityType}}</p>-->
+<!--          </div>-->
+<!--&lt;!&ndash;          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" (click)="delModal(facility)">Hiển thị</button></td>&ndash;&gt;-->
+<!--          <button class="btn btn-outline-dark mx-3">-->
+<!--            <a [routerLink]="['/facility/edit',facility.facilityId]">Edit</a>-->
+<!--          </button>-->
+<!--          <button class="btn btn-outline-dark">-->
+<!--            <a [routerLink]="['/facility/delete',facility.facilityId]">Delete</a>-->
+<!--          </button>-->
+<!--&lt;!&ndash;          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delModal" (click)="delModal(facility)"></button>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End facility-list list &ndash;&gt;-->
+<!--<pagination-controls (pageChange)="pageChanged($event)" previousLabel="Rrevious" nextLabel="Next"></pagination-controls>-->

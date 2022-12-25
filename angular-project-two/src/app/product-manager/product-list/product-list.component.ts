@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.getAll();
     this.config = {
-      itemsPerPage: 3,
+      itemsPerPage: 4,
       currentPage: 1,
       totalItems: this.products.length
     };

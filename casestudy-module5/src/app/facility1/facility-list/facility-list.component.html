@@ -1,0 +1,40 @@
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/product/create" class="btn btn-outline-dark">Thêm sản phẩm mới</a>
+<br><br>
+<div>
+  <table class="table table-striped">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Cost</td>
+      <td>Max people</td>
+      <td>Standar room</td>
+      <td>Description</td>
+      <td>Pool area</td>
+      <td>Number of floors</td>
+      <td>Rent type</td>
+      <td>Facility Type</td>
+      <td>Detail</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor="let facility of facilities | paginate: config">
+      <td>{{facility.facilityId}}</td>
+      <td>{{facility.facilityName}}</td>
+      <td>{{facility.cost}}</td>
+      <td>{{facility.maxPeople}}</td>
+      <td>{{facility.standardRoom}}</td>
+      <td>{{facility.description}}</td>
+      <td>{{facility.poolArea}}</td>
+      <td>{{facility.numberOfFloors}}</td>
+      <td>{{facility.rentType}}</td>
+      <td>{{facility.facilityType}}</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" (click)="delModal(facility)">Show</button></td>
+      <td><a class="btn btn-outline-dark" [routerLink]="['/router/edit', facility.facilityId]">Edit</a></td>
+      <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delModal" (click)="delModal(facility)">Delete</button></td>
+    </tr>
+  </table>
+</div>
+
+
