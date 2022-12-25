@@ -1,0 +1,33 @@
+<div>
+  <h1>Thêm mới dịch vụ</h1>
+  <div>
+    <form [formGroup]="contractForm" (ngSubmit)="updateForm()">
+      <table>
+        <tr>
+          <td>Customer:</td>
+          <td><input type="text" class="form-control" formControlName="customerId"></td>
+        </tr>
+        <tr>
+          <td>Facility:</td>
+          <td><input type="text" class="form-control"  formControlName="facilityId"></td>
+        </tr>
+        <tr>
+          <td>Start Date</td>
+          <td><input type="date" class="form-control" formControlName="startDate" ></td>
+        </tr>
+        <tr>
+          <td>End Date</td>
+          <td><input type="date" class="form-control" formControlName="endDate" ></td>
+        </tr>
+        <tr>
+          <td>Deposit</td>
+          <td><input type="text" class="form-control" formControlName="deposit" ></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

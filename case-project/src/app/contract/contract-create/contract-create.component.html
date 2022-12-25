@@ -1,0 +1,48 @@
+<div>
+  <h1>Thêm mới dịch vụ</h1>
+  <div>
+    <form [formGroup]="contractForm" (ngSubmit)="submit()">
+      <table>
+        <tr>
+          <td>Customer:</td>
+          <td><input type="text" class="form-control" formControlName="customerId"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(contractForm.controls.customerId.touched) && contractForm.controls.customerId.hasError('required') "> Name is not null </span>
+        </label>
+        <tr>
+          <td>Facility:</td>
+          <td><input type="text" class="form-control"  formControlName="facilityId"></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(contractForm.controls.facilityId.touched) && contractForm.controls.facilityId.hasError('required') "> Area is not null </span>
+        </label>
+        <tr>
+          <td>Start Date</td>
+          <td><input type="date" class="form-control" formControlName="startDate" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(contractForm.controls.startDate.touched) && contractForm.controls.startDate.hasError('required') "> Cost is not null </span>
+        </label>
+        <tr>
+          <td>End Date</td>
+          <td><input type="date" class="form-control" formControlName="endDate" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(contractForm.controls.endDate.touched) && contractForm.controls.endDate.hasError('required') "> Max People is not null </span>
+        </label>
+        <tr>
+          <td>Deposit</td>
+          <td><input type="text" class="form-control" formControlName="deposit" ></td>
+        </tr>
+        <label class="form-label">
+          <span style="color:red;" *ngIf="(contractForm.controls.deposit.touched) && contractForm.controls.deposit.hasError('required') "> Standard Room is not null </span>
+        </label>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary" [disabled]="contractForm.invalid">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

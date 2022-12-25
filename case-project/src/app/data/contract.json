@@ -1,0 +1,20 @@
+{
+  "contracts": [
+    {
+      "id": 1,
+      "facilityId": 1,
+      "customerId": 1,
+      "startDate": "20/08/2000",
+      "endDate": "20/09/2000",
+      "deposit": 100000
+    },
+    {
+      "id": 2,
+      "facilityId": 2,
+      "customerId": 2,
+      "startDate": "22/08/2000",
+      "endDate": "22/09/2000",
+      "deposit": 1000000
+    }
+  ]
+}

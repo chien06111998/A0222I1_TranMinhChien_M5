@@ -8,6 +8,10 @@ import {CustomerListComponent} from './customer/customer-list/customer-list.comp
 import {CustomerDetailComponent} from './customer/customer-detail/customer-detail.component';
 import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
+import {ContractListComponent} from './contract/contract-list/contract-list.component';
+import {CotnractDetailComponent} from './contract/contract-detail/cotnract-detail.component';
+import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
+import {ContractEditComponent} from './contract/contract-edit/contract-edit.component';
 
 
 const routes: Routes = [
@@ -21,6 +25,11 @@ const routes: Routes = [
   {path: 'customers/detail/:id' , component: CustomerDetailComponent},
   {path: 'customers/create' , component: CustomerCreateComponent},
   {path: 'customers/edit/:id' , component: CustomerEditComponent},
+  // contract
+  {path: 'contracts' , component: ContractListComponent},
+  {path: 'contracts/detail/:id' , component: CotnractDetailComponent},
+  {path: 'contracts/create' , component: ContractCreateComponent},
+  {path: 'contracts/edit/:id' , component: ContractEditComponent},
 
 ];
 

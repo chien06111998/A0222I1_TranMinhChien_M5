@@ -16,6 +16,10 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 import { CustomerDetailComponent } from './customer/customer-detail/customer-detail.component';
 import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { CotnractDetailComponent } from './contract/contract-detail/cotnract-detail.component';
+import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
+import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
     CustomerListComponent,
     CustomerDetailComponent,
     CustomerCreateComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    ContractListComponent,
+    CotnractDetailComponent,
+    ContractCreateComponent,
+    ContractEditComponent
   ],
   imports: [
     BrowserModule,
