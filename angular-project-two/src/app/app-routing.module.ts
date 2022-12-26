@@ -18,9 +18,9 @@ import {CreateNewFacilityComponent} from './case-study/facility/create-new-facil
 
 const routes: Routes = [
   // {path: '', component: ProductListComponent},
-  // {path: 'product/list', component: ProductListComponent},
-  // {path: 'product/create', component: ProductCreateComponent},
-  // {path: 'product/edit/:id', component: ProductEditComponent},
+  {path: 'product/list', component: ProductListComponent},
+  {path: 'product/create', component: ProductCreateComponent},
+  {path: 'product/edit/:id', component: ProductEditComponent},
 
   // {path: '', component: DictionaryListComponent},
   // {path: 'list', component: DictionaryListComponent},
@@ -42,6 +42,7 @@ const routes: Routes = [
     path: 'category/delete/:id',
     component: CategoryDeleteComponent
   },
+
   // {
   //   path: 'facility/list',
   //   component: FacilityComponent
