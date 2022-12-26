@@ -29,6 +29,7 @@ import {EditCustomerComponent} from './case-study/customer/edit-customer/edit-cu
 import {EditFacilityComponent} from './case-study/facility/edit-facility/edit-facility.component';
 import {FacilityComponent} from './case-study/facility/facility-list/facility.component';
 import { CasestudyMd5Component } from './casestudy-md5/casestudy-md5.component';
+import { NavBarComponent } from './ss9-connect-backend/product-manager/share/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CasestudyMd5Component } from './casestudy-md5/casestudy-md5.component';
     EditCustomerComponent,
     EditFacilityComponent,
     FacilityComponent,
-    CasestudyMd5Component
+    CasestudyMd5Component,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

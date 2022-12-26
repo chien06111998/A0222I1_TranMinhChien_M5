@@ -14,10 +14,11 @@ import {FooterComponent} from './case-study/footer/footer.component';
 import {FacilityComponent} from './case-study/facility/facility-list/facility.component';
 import {EditFacilityComponent} from './case-study/facility/edit-facility/edit-facility.component';
 import {CreateNewFacilityComponent} from './case-study/facility/create-new-facility/create-new-facility.component';
+import {NavBarComponent} from './ss9-connect-backend/product-manager/share/nav-bar/nav-bar.component';
 
 
 const routes: Routes = [
-  // {path: '', component: ProductListComponent},
+  {path: '', component: NavBarComponent},
   {path: 'product/list', component: ProductListComponent},
   {path: 'product/create', component: ProductCreateComponent},
   {path: 'product/edit/:id', component: ProductEditComponent},
