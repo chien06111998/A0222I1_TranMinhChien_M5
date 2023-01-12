@@ -1,0 +1,88 @@
+<h1>Tạo lô hàng mới</h1>
+<form [formGroup]="packageForm" (ngSubmit)="submit()">
+  <div class="col-md-6">
+    <label class="form-label"  >Mã sản phẩm</label>
+    <input class="form-control" type="text" formControlName="packageCode">
+    <p class="text-warning" *ngIf="packageForm.get('packageCode')?.invalid && packageForm.get('packageCode')?.touched">Không hợp lệ</p>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label"  >Sản phẩm</label>
+    <p>Product: <span style="color:red;" *ngIf="(packageForm.controls.product.touched) && packageForm.controls.product.hasError('required') "> Product is not null </span></p>
+    <select class="form-select" formControlName="product">
+      <option selected [value]="null">Select</option>
+      <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>
+    </select>
+    <p class="text-warning" *ngIf="packageForm.get('product')?.invalid && packageForm.get('product')?.touched">Không hợp lệ</p>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label"  >Số lượng</label>
+    <input class="form-control" type="number" formControlName="quantity">
+    <p class="text-warning" *ngIf="packageForm.get('quantity')?.invalid && packageForm.get('quantity')?.touched">Không hợp lệ</p>
+  </div>
+  <div formGroupName="dateGroup">
+    <div class="col-md-6">
+      <label class="form-label"  >Ngày sản xuất</label>
+      <input class="form-control" type="date" formControlName="outDate">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Ngày nhập hàng</label>
+      <input class="form-control" type="date" formControlName="inDate">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Ngày hết hạn</label>
+      <input class="form-control" type="date" formControlName="expDate">
+    </div>
+    <p class="text-warning" *ngIf="packageForm.hasError('invalidDate',['dateGroup']) && packageForm.get('dateGroup')?.touched">Không hợp lệ</p>
+  </div>
+  <div class="col-md-6">
+    <button type="button" class="btn btn-outline-dark" routerLink="/package-list">Quay lại danh sách</button>
+    <button type="submit" class="btn btn-outline-dark" [disabled]="packageForm.invalid">Tạo lô hàng mới</button>
+  </div>
+</form>
+
+
+
+<!--<div>-->
+<!--  <h1>Add new Package:</h1>-->
+<!--  <div>-->
+<!--    <form [formGroup]="packageForm" (ngSubmit)="submit()">-->
+<!--        <div>-->
+<!--          <p>Package Code: <span style="color:red;" *ngIf="(packageForm.controls.packageCode.touched) && packageForm.controls.packageCode.hasError('required') "> Package Code is not null </span>-->
+<!--            <span style="color:red;" *ngIf="(packageForm.controls.packageCode.touched) && packageForm.controls.packageCode.hasError('pattern') "> Package Code: Incorrect Format. </span></p>-->
+<!--          <input type="text" class="form-control" formControlName="packageCode">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>Product: <span style="color:red;" *ngIf="(packageForm.controls.product.touched) && packageForm.controls.product.hasError('required') "> Product is not null </span></p>-->
+<!--            <select class="form-select" formControlName="product">-->
+<!--              <option selected [value]="null">Select</option>-->
+<!--              <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>Quantity: <span style="color:red;" *ngIf="(packageForm.controls.quantity.touched) && packageForm.controls.quantity.hasError('required') "> Quantity is not null </span>-->
+<!--          </p>-->
+<!--          <input type="text" class="form-control" formControlName="quantity" >-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>Ex Date: <span style="color:red;" *ngIf="(packageForm.controls.exDate.touched) && packageForm.controls.exDate.hasError('required') "> Ex Date is not null </span>-->
+<!--          </p>-->
+<!--          <input type="date" class="form-control" formControlName="exDate" >-->
+<!--        </div>-->
+<!--      <div>-->
+<!--          <p>In Date: <span style="color:red;" *ngIf="(packageForm.controls.inDate.touched) && packageForm.controls.inDate.hasError('required') "> In Date is not null </span>-->
+<!--            <span style="color:red;" *ngIf="(packageForm.controls.inDate.touched) && packageForm.controls.inDate.hasError('invalidDate1') ">-->
+<!--The date of import cannot be less than the date of manufacture </span>-->
+<!--          </p>-->
+<!--          <input type="date" class="form-control" formControlName="inDate" >-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <p>Out Date: <span style="color:red;" *ngIf="(packageForm.controls.outDate.touched) && packageForm.controls.outDate.hasError('required') "> Out Date is not null </span>-->
+<!--            <span class="text-warning" style="color: red" *ngIf="packageForm.hasError('invalidDate',['dateGroup']) && packageForm.get('dateGroup')?.touched">-->
+<!--export date cannot be less than import date </span>-->
+<!--          </p>-->
+<!--          <input type="date" class="form-control" formControlName="outDate" >-->
+<!--        </div>-->
+<!--      <div><button type="submit" class="btn btn-primary" [disabled]="packageForm.invalid">Submit</button></div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->

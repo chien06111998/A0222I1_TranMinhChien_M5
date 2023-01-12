@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { ColorComponent } from './color/color.component';
+import {AppComponent} from './app.component';
+import {ColorComponent} from './color/color.component';
 
 @NgModule({
   declarations: [
@@ -15,4 +15,5 @@ import { ColorComponent } from './color/color.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

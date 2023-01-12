@@ -1,0 +1,95 @@
+<div class="col-6">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+</div>
+<h1>Backage list</h1>
+<a [routerLink]="['/backages/create']" class="btn btn-outline-dark">Add new backage</a>
+
+<!--search-->
+<div class="col-8">
+  <form [formGroup]="formSearch" (ngSubmit)="searchByName()">
+    <input formControlName="packageCode" type="text" placeholder="Package code Search">
+<!--    <input formControlName="room" type="text" placeholder="Price Search">-->
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Tên sản phẩm</th>
+<!--      <th>Giá</th>-->
+<!--      <th>Đơn vị</th>-->
+      <th>Số lượng</th>
+      <th>Ngày nhập hàng</th>
+      <th>Ngày sản xuất</th>
+      <th>Ngày hết hạn</th>
+      <th>Detail</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+<!--    | sortBy:'desc':'id' | filter:searchText-->
+    <tr *ngFor="let pck of backages  | paginate: index | sortBy:'desc':'id' | filter:searchText">
+      <td>{{pck.id}}</td>
+      <td>{{pck.packageCode}}</td>
+<!--      <td>-->
+<!--        <ng-container *ngFor="let check of products">-->
+<!--          <div *ngIf="check.id == pck.product.id">-->
+<!--            <span>{{check.price}}</span>-->
+<!--          </div>-->
+<!--        </ng-container>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <ng-container *ngFor="let check of products">-->
+<!--          <div *ngIf="check.id == pck.product.id">-->
+<!--            <span>{{check.unit}}</span>-->
+<!--          </div>-->
+<!--        </ng-container>-->
+<!--      </td>-->
+<!--      <td>{{pck.product.price}}</td>-->
+<!--      <td>{{pck.product.unit}}</td>-->
+      <td>{{pck.quantity}}</td>
+      <td>{{pck.inDate}}</td>
+      <td>{{pck.expDate}}</td>
+      <td>{{pck.outDate}}</td>
+<!--      <td>{{pck.inDate | date: 'dd/MM/yyyy'}}</td>-->
+<!--      <td>{{pck.expDate | date: 'dd/MM/yyyy'}}</td>-->
+<!--      <td>{{pck.outDate | date: 'dd/MM/yyyy'}}</td>-->
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" [routerLink]="['/backages/detail', pck.id]">Detail</button></td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal" [routerLink]="['/backages/edit', pck.id]">Edit</button></td>
+
+      <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delModal" (click)="delModal(pck)">Delete</button></td>
+    </tr>
+  </table>
+</div>
+
+<pagination-controls (pageChange)="pageChanged($event)" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+
+<!-- Delete Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete package:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Do you delete: </p>
+        <br>
+        <table class="table">
+          <tr>
+            <td>Package code:</td>
+            <td>{{deleteBackage.packageCode}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" (click)="delPackage(deleteBackage.id)" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end modal-->

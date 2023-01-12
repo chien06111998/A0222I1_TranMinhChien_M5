@@ -1,0 +1,73 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Hoang",
+      "source": "Bach Hoa",
+      "price": 10000,
+      "unit": "Nhan Vien",
+      "image": "no img"
+    },
+    {
+      "id": 2,
+      "name": "Chu",
+      "source": "Bach Hoa",
+      "price": 100000,
+      "unit": "Nhan Vien van phong",
+      "image": "no img"
+    }
+  ],
+  "backages": [
+    {
+      "id": 4,
+      "packageCode": "BK-04",
+      "product": {
+        "id": 2,
+        "name": "Chu",
+        "source": "Bach Hoa",
+        "price": 100000,
+        "unit": "Nhan Vien van phong",
+        "image": "no img"
+      },
+      "quantity": 10,
+      "inDate": "20/10/2022",
+      "outDate": "21/10/2022",
+      "exDate": "22/10/2022"
+    },
+    {
+      "packageCode": "KH-02",
+      "product": 2,
+      "quantity": "11111",
+      "exDate": "2022-12-07",
+      "inDate": "2022-12-26",
+      "outDate": "2022-12-28",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "packageCode": "KH-32",
+      "quantity": "123456",
+      "expDate": null,
+      "inDate": "2022-12-30",
+      "outDate": "2022-12-30"
+    },
+    {
+      "packageCode": "KH-21",
+      "product": 2,
+      "quantity": "4321",
+      "exDate": "2022-12-01",
+      "inDate": "2022-12-15",
+      "outDate": "2022-12-24",
+      "id": 8
+    },
+    {
+      "packageCode": "KH-11",
+      "product": 1,
+      "quantity": "12",
+      "exDate": "2022-12-08",
+      "inDate": "2022-12-28",
+      "outDate": "2023-01-04",
+      "id": 9
+    }
+  ]
+}

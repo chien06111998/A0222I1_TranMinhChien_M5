@@ -27,30 +27,17 @@
       "facilityType": 3
     },
     {
-      "facilityName": "name 4",
-      "area": "5",
-      "cost": "5",
-      "maxPeople": "5",
-      "standardRoom": "p05",
-      "description": "nha",
-      "poolArea": "5",
-      "numberOfFloors": "5",
-      "rentType": "5",
-      "facilityType": "5",
-      "id": 5
-    },
-    {
-      "facilityName": "name 4",
-      "area": "6",
-      "cost": "6",
-      "maxPeople": "6",
-      "standardRoom": "p06",
-      "description": "nha",
-      "poolArea": "6",
-      "numberOfFloors": "6",
-      "rentType": "6",
-      "facilityType": "6",
-      "id": 6
+      "id": 4,
+      "facilityName": "name 2222",
+      "area": "2",
+      "cost": "1",
+      "maxPeople": "1",
+      "standardRoom": "p01",
+      "description": "nha dep",
+      "poolArea": "1",
+      "numberOfFloors": "1",
+      "rentType": "1",
+      "facilityType": "1"
     }
   ]
 }

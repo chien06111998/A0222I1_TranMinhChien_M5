@@ -1,0 +1,41 @@
+<div>
+  <h1>Edit package: </h1>
+  <div>
+    <form [formGroup]="packageForm" (ngSubmit)="updateForm()">
+      <table>
+        <tr>
+          <td>Package Code:</td>
+          <td><input type="text" class="form-control" formControlName="packageCode"></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td>Product:</td>-->
+<!--          <select class="form-select" formControlName="product">-->
+<!--            <option selected [value]="null">Select</option>-->
+<!--            <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>-->
+<!--          </select>-->
+<!--        </tr>-->
+        <tr>
+        <tr>
+          <td>Quantity</td>
+          <td><input type="text" class="form-control" formControlName="quantity" ></td>
+        </tr>
+        <tr>
+          <td>Exp Date</td>
+          <td><input type="date" class="form-control" formControlName="expDate" ></td>
+        </tr>
+        <tr>
+          <td>In Date</td>
+          <td><input type="date" class="form-control" formControlName="inDate" ></td>
+        </tr>
+        <tr>
+          <td>Out Date</td>
+          <td><input type="date" class="form-control" formControlName="outDate" ></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div>
+  <h1 style="color: blue">Chinh sua So Tiet Kiem.</h1>
+  <form [formGroup]="customerForm" (ngSubmit)="updateForm()">
+    <div class="col-md-6">
+      <label class="form-label"  >Ten khach hang:</label>
+      <span class="text-warning" *ngIf="(customerForm.controls.ten.touched) && customerForm.controls.ten.hasError('required') "> Ten khach hang khong duoc de trong. </span>
+      <span class="text-warning" *ngIf="(customerForm.controls.ten.touched) && customerForm.controls.ten.hasError('pattern') "> Ten khach hang khong chua ky tu so. </span>
+      <input class="form-control" type="text" formControlName="ten">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Ngay mo so:</label>
+      <span class="text-warning" *ngIf="(customerForm.controls.ngayMoSo.touched) && customerForm.controls.ngayMoSo.hasError('required') "> Ngay mo so khong duoc de trong. </span>
+      <input class="form-control" type="date" formControlName="ngayMoSo">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Ngay gui:</label>
+      <span class="text-warning" *ngIf="(customerForm.controls.ngayGui.touched) && customerForm.controls.ngayGui.hasError('required') "> Ngay gui khong duoc de trong. </span>
+      <input class="form-control" type="date" formControlName="ngayGui">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Ky han:</label> <span class="text-warning" *ngIf="(customerForm.controls.kyHan.touched) && customerForm.controls.kyHan.hasError('required') "> Ky han khong duoc de trong. </span>
+      <input class="form-control" type="text" formControlName="kyHan">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >So tien:</label>  <span class="text-warning" *ngIf="(customerForm.controls.soTien.touched) && customerForm.controls.soTien.hasError('required') "> So tien khong duoc de trong. </span>
+      <input class="form-control" type="text" formControlName="soTien">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label"  >Lai suat:</label>
+      <span class="text-warning" *ngIf="(customerForm.controls.laiSuat.touched) && customerForm.controls.laiSuat.hasError('required') "> Lai suat khong duoc de trong. </span>
+      <input class="form-control" type="text" formControlName="laiSuat">
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-outline-dark" routerLink="/customers">Quay lai danh sach</button>
+      <button type="submit" class="btn btn-outline-dark" [disabled]="customerForm.invalid">Chinh sua</button>
+    </div>
+  </form>
+</div>
+
